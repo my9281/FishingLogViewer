@@ -1,0 +1,249 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.header-banner {
+    top: 0px;
+    height: 60px;
+    position: absolute;
+    overflow-y: auto;
+    background-color: black;
+    width: 100%;
+    color: white;
+}
+
+    .header-banner h1 {
+        margin: 0;
+        font-size: 24px;
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+    }
+
+    .header-banner .header-banner-inner {
+        color: white;
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        text-decoration: none;
+        font-size: 16px;
+    }
+
+        .header-banner .header-banner-inner span {
+            margin: 0 10px;
+        }
+
+    .header-banner a:hover {
+        text-decoration: underline;
+    }
+
+#hoverTarget {
+    cursor: pointer;
+}
+
+#hoverBox {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    z-index: 1000;
+    display: none;
+    position: fixed;
+    background: #000;
+    border: 1px solid #fff;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+    #hoverBox p {
+        margin: 0px,0px;
+        padding: 0px 5px;
+    }
+
+        #hoverBox p a {
+            margin: 0px,0px;
+            padding: 0px 0px;
+            color: white;
+        }
+
+.logout-btn{
+    color:white;
+}
+canvas {
+    display: block;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    background-size: cover;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.login {
+    position: fixed;
+    text-align: center;
+    margin: 0 auto;
+    width: 400px;
+    height: 300px;
+    background-color: rgba(87, 86, 86, 0.2);
+    border-radius: 15px;
+    box-shadow: 5px 2px 35px -7px #ff9a9e;
+    backdrop-filter: blur(4px);
+}
+
+    .login h2 {
+        margin-top: 20px;
+        text-align: center;
+        color: aliceblue;
+    }
+
+    .login .login-inner {
+        padding: 0 15px;
+        text-align: left;
+        color: rgb(131, 220, 255);
+        font-size: 18px;
+    }
+
+        .login .login-inner div {
+            margin-top: 10px;
+            text-align: left;
+            color: rgb(131, 220, 255);
+            font-size: 18px;
+        }
+
+        .login .login-inner span {
+        }
+
+    .login input {
+        background-color: transparent;
+        width: 100%;
+        padding: 2px;
+        text-indent: 2px;
+        color: white;
+        font-size: 15px;
+        height: 30px;
+        margin: 0px;
+        outline: none;
+        border: 0;
+        border-bottom: 1px solid rgb(131, 220, 255);
+    }
+
+input::placeholder {
+    color: #fbc2eb;
+    font-weight: 100;
+    font-size: 18px;
+    font-style: italic;
+}
+
+.login .btn {
+    width: 100%;
+}
+
+.login_btn {
+    background-color: rgba(140, 230, 0, 0.582);
+    border: 1px solid rgb(190, 225, 255);
+    padding: 10px;
+    width: 80%;
+    height: 50px;
+    border-radius: 30px;
+    font-size: 21px;
+    color: white;
+    font-weight: 100;
+    margin-top: 33px;
+    transition: background-color 0.3s ease;
+}
+
+    .login_btn:hover {
+        background-color: rgba(140, 230, 0, 0.8);
+    }
+
+
+    .login_btn:active {
+        background-color: rgba(140, 230, 0, 1);
+    }
+
+.scrollcontent {
+    bottom: 0px;
+    top: 60px;
+    left: 0px;
+    right: 0px;
+    width: 100%;
+    max-height: 100%;
+    position: absolute;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    padding-right: 10px;
+}
+
+
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+    .timeline::after {
+        content: '';
+        position: absolute;
+        width: 0px;
+        background-color: #ddd;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+.timeline-item {
+    position: relative;
+    width: 50%;
+    padding: 10px 40px;
+    box-sizing: border-box;
+}
+
+    .timeline-item.left {
+        left: 0;
+        text-align: right;
+    }
+
+    .timeline-item.right {
+        left: 50%;
+        text-align: left;
+    }
+
+    .timeline-item .content {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #f1f1f1;
+        border-radius: 6px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        position: relative;
+    }
+
+    .timeline-item::before {
+        content: '';
+        position: absolute;
+        top: 15px;
+        width: 20px;
+        height: 20px;
+        background-color: #fff;
+        border: 4px solid #ddd;
+        border-radius: 50%;
+        z-index: 1;
+    }
+
+    .timeline-item.left::before {
+        right: -15px; /* 圆点贴中线 */
+    }
+
+    .timeline-item.right::before {
+        left: -15px; /* 圆点贴中线 */
+    }
+
+.timeline-content-info {
+    font-size: 12px;
+}

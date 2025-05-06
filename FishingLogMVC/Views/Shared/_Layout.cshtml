@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="expires" content="0">
+	<meta charset="utf-8" />
+	<title>Fishing project log viewer - @ViewData["Title"]</title>
+	<script type="text/javascript" src="~/lib/jquery/dist/jquery.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="~/css/users/style.css">
+</head>
+<body>
+	<div class="header-banner">
+		<h1>@ViewBag.Dic["Title"]</h1>
+		<div class="header-banner-inner">
+			@if (ViewBag.Lan == "zh-CN")
+			{ 
+				<span id="hoverTarget">简</span>
+			}
+			else if (ViewBag.Lan == "zh-TW")
+			{ 
+				<span id="hoverTarget">繁</span>
+			}
+			else
+			{
+				<span id="hoverTarget">EN </span>
+			}
+			<div id="hoverBox">
+				<p>
+					<a id="lan-en" href="javascript:void(0);">En</a>
+				</p>
+				<p>
+					<a id="lan-Zh" href="javascript:void(0);">简</a>
+				</p>
+				<p>
+					<a id="lan-TW" href="javascript:void(0);">繁</a>
+				</p>
+			</div>
+
+
+			<a class="logout-btn" href="/Users/Logout">@ViewBag.Dic["logout"]</a>
+		</div>
+	</div>
+	<canvas id="canvas" width="1920" height="1080">
+	</canvas>
+	@RenderBody()
+	<script type="text/javascript" src="~/js/users/login.js"></script>
+	<script type="text/javascript" src="~/js/users/script.js"></script>
+</body>
+</html>
