@@ -1,4 +1,6 @@
+using FishingLogMVC.Core;
 using FishingLogMVC.Interfaces;
+using FishingLogMVC.Middlewares;
 using FishingLogMVC.Models;
 using LiteDB;
 using Microsoft.AspNetCore.Authorization;
@@ -12,11 +14,13 @@ namespace FishingLogMVC.Controllers
     [Authorize]
     public class HomeController : Controller
     {
+        private readonly WebSocketConnectionManager _wsManager;
         private readonly INoSQLDB<HomeController> _db;
         private readonly ICookiesService<HomeController> _cookies;
 
-        public HomeController(INoSQLDB<HomeController> db, ICookiesService<HomeController> cookies)
+        public HomeController(INoSQLDB<HomeController> db, ICookiesService<HomeController> cookies, WebSocketConnectionManager wsManager)
         {
+            _wsManager = wsManager; 
             _db = db;
             _cookies = cookies;
         }

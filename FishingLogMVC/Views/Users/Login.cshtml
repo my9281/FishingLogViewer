@@ -1,19 +1,26 @@
 ﻿
 <div class="login">
 	<h2>@ViewBag.Dic["Login"]</h2>
-	<div class="login-inner">
-		<div>
-			<span>@ViewBag.Dic["AccountID"]</span>
+	<div class="login-box">
+		<div class="login-template">
+			<div class="login-inner">
+				<div>
+					<span>@ViewBag.Dic["AccountID"]</span>
+				</div>
+				<input type="text" id="uid" placeholder="@ViewBag.Dic["AccountIDPH"]">
+				<div>
+					<span>@ViewBag.Dic["Password"]</span>
+				</div>
+				<input type="password" id="upa" placeholder="@ViewBag.Dic["PasswordPH"]">
+			</div>
+			<div class="btn">
+				<button class="login_btn" id="login-btn">
+					@ViewBag.Dic["Submit"]
+				</button> 
+			</div>
 		</div>
-		<input type="text" id="uid" placeholder="@ViewBag.Dic["AccountIDPH"]">
-		<div>
-			<span>@ViewBag.Dic["Password"]</span>
+		<div class="qrcode-box"> 
+			<div id="login-qrcode"></div>
 		</div>
-		<input type="password" id="upa" placeholder="@ViewBag.Dic["PasswordPH"]">
-	</div>
-	<div class="btn">
-		<button class="login_btn" id="login-btn"  >
-			@ViewBag.Dic["Submit"]
-		</button>
 	</div>
 </div>

@@ -14,10 +14,51 @@ namespace FishingLogMVC.Controllers
 {
     public class UsersController : Controller
     {
+        private readonly string _controlled;
+        private readonly string _secretKey = "ThomasMagicChen_1992";
+        private readonly WebSocketConnectionManager _wsManager;
+        public UsersController(WebSocketConnectionManager wsManager)
+        {
+            _controlled = Guid.NewGuid().ToString();
+            _wsManager = wsManager; 
+        }
         [AllowAnonymous]
         public IActionResult Login()
         {
-            return View();
+            return View(); 
+        }
+
+        [AllowAnonymous]
+        [HttpGet("Loginbyqr")]
+        [HttpGet("/api/Users/Loginbyqr")]
+        public async Task<IActionResult> Loginbyqr(string id)
+        {
+            var username = id;
+            var password = id;
+            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+            {
+                return Json("-1");
+            }
+            var userId = DBPassword.Login(username, password);
+
+            if (string.IsNullOrEmpty(userId))
+            {
+                return Json("-1");
+            }
+
+            var claims = new List<Claim>
+    {
+        new Claim(ClaimTypes.NameIdentifier, userId),
+        new Claim(ClaimTypes.Name, username)
+    };
+
+            var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+
+            await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
+                new ClaimsPrincipal(claimsIdentity));
+            _wsManager.Accept(id);
+
+            return Json("扫码成功");
         }
 
         public IActionResult Logout()
@@ -32,7 +73,6 @@ namespace FishingLogMVC.Controllers
             return View();
         }
 
-        private readonly string _secretKey = "ThomasMagicChen_1992";
 
         [AllowAnonymous]
         [HttpPost("login")]
@@ -45,9 +85,9 @@ namespace FishingLogMVC.Controllers
             }
             var userId = DBPassword.Login(username, password);
 
-            if (string.IsNullOrEmpty(userId) )
-            { 
-                return Json( "-1");
+            if (string.IsNullOrEmpty(userId))
+            {
+                return Json("-1");
             }
 
             var claims = new List<Claim>
@@ -61,9 +101,9 @@ namespace FishingLogMVC.Controllers
             await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
                 new ClaimsPrincipal(claimsIdentity));
 
-            return Json(userId);  
+            return Json(userId);
         }
 
- 
+
     }
 }

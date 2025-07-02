@@ -1,7 +1,64 @@
 ﻿
 $(document).ready(function () {
+
+
+
     const $target = $('#hoverTarget');
     const $box = $('#hoverBox');
+
+
+
+
+
+
+
+
+    var socket = new WebSocket("ws://localhost:5038/ws");
+
+    socket.onopen = function (event) {
+        console.log("WebSocket connected.");
+        socket.send("Hello Server!");
+    };
+
+    socket.onmessage = function (event) {
+
+        $("#login-qrcode").empty();
+        var dataObj = JSON.parse(event.data); // 解析成 JS 对象 
+        if (dataObj.Status == "Login") { 
+            window.location.href = '/';
+            console.log(dataObj);
+        }
+        else {
+            var pp = window.location.origin + "/api/Users/Loginbyqr?id=" + dataObj.Id;
+            console.log(pp);
+            var qrcode = new QRCode(document.getElementById("login-qrcode"), {
+                text: pp,
+                width: 256,
+                height: 256,
+                colorDark: "#000000",
+                colorLight: "#ffffff",
+                correctLevel: QRCode.CorrectLevel.H
+            });
+        } 
+    };
+
+    socket.onclose = function (event) {
+        console.log("WebSocket closed.");
+    };
+
+    socket.onerror = function (error) {
+        console.error("WebSocket error:", error);
+    };
+     
+
+
+
+
+
+
+
+
+
 
     $target.on('mouseenter', function () {
         const offset = $target.offset();
