@@ -13,7 +13,7 @@ $(document).ready(function () {
 
 
 
-    var socket = new WebSocket("ws://localhost:5038/ws");
+    var socket = new WebSocket("ws://" + window.location.href + "/ws");
 
     socket.onopen = function (event) {
         console.log("WebSocket connected.");
