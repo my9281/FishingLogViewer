@@ -1,0 +1,22 @@
+﻿<div class="tarot-outter-box">
+	@for (int i = 0; i < 4; i++)
+	{
+		string pp = "/img/" + ViewBag.CardIndexs[i] + ".jpg";
+		<div class="tarot-inner-box">
+			@if (!ViewBag.CardsUtd[i])
+			{
+				<img src="@pp" height="300" class="tarot-img" />
+			}
+			else
+			{
+				<img src="@pp" height="300" class="tarot-img-rotate" />
+			}
+			<div class="tarot-textbox">
+				<span class="tarot-text">@(ViewBag.Cards[i] + (ViewBag.CardsUtd[i] ? "逆位" : "正位"))</span>
+			</div> 
+			<div class="tarot-dis">
+				@ViewBag.TarotText[i]
+			</div>
+		</div>
+	}
+</div>

@@ -3,5 +3,6 @@
     public interface ICookiesService<T>
     { 
         string GetUserLanguage();
+        string GetUserID();
     } 
 }

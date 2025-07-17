@@ -158,8 +158,7 @@
                 Key = "Submit",
                 Lan = "en",
                 Value = "Submit"
-            });
-
+            }); 
             Dictionary.Add(new TransInfo()
             {
                 Key = "Submit",
@@ -172,6 +171,25 @@
                 Lan = "zh-CN",
                 Value = "提交"
             });
+            Dictionary.Add(new TransInfo()
+            {
+                Key = "Fortune",
+                Lan = "en",
+                Value = "Fortune"
+            });
+            Dictionary.Add(new TransInfo()
+            {
+                Key = "Fortune",
+                Lan = "zh-TW",
+                Value = "今日運勢"
+            });
+            Dictionary.Add(new TransInfo()
+            {
+                Key = "Fortune",
+                Lan = "zh-CN",
+                Value = "今日运势"
+            });
+
         }
         public static List<TransInfo> Dictionary { get; set; } = [];
     }

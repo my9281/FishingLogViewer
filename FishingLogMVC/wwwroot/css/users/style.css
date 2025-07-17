@@ -66,9 +66,10 @@ html {
             color: white;
         }
 
-.logout-btn{
-    color:white;
+.logout-btn {
+    color: white;
 }
+
 canvas {
     display: block;
 }
@@ -92,6 +93,7 @@ body {
     box-shadow: 5px 2px 35px -7px #ff9a9e;
     backdrop-filter: blur(4px);
 }
+
 .login-box {
     display: flex;
     flex-direction: row; /* 横向排列 */
@@ -99,6 +101,7 @@ body {
     align-items: flex-start; /* 顶部对齐 */
     gap: 40px; /* 左右模块间距，可根据需要调整 */
 }
+
     .login-box .login-template {
         width: 400px;
         height: 300px;
@@ -109,42 +112,43 @@ body {
         width: 300px;
         height: 300px;
     }
-    .login h2 {
-        margin-top: 20px;
-        text-align: center;
-        color: aliceblue;
-    }
 
-    .login .login-inner {
-        padding: 0 15px;
+.login h2 {
+    margin-top: 20px;
+    text-align: center;
+    color: aliceblue;
+}
+
+.login .login-inner {
+    padding: 0 15px;
+    text-align: left;
+    color: rgb(131, 220, 255);
+    font-size: 18px;
+}
+
+    .login .login-inner div {
+        margin-top: 10px;
         text-align: left;
         color: rgb(131, 220, 255);
         font-size: 18px;
     }
 
-        .login .login-inner div {
-            margin-top: 10px;
-            text-align: left;
-            color: rgb(131, 220, 255);
-            font-size: 18px;
-        }
-
-        .login .login-inner span {
-        }
-
-    .login input {
-        background-color: transparent;
-        width: 100%;
-        padding: 2px;
-        text-indent: 2px;
-        color: white;
-        font-size: 15px;
-        height: 30px;
-        margin: 0px;
-        outline: none;
-        border: 0;
-        border-bottom: 1px solid rgb(131, 220, 255);
+    .login .login-inner span {
     }
+
+.login input {
+    background-color: transparent;
+    width: 100%;
+    padding: 2px;
+    text-indent: 2px;
+    color: white;
+    font-size: 15px;
+    height: 30px;
+    margin: 0px;
+    outline: none;
+    border: 0;
+    border-bottom: 1px solid rgb(131, 220, 255);
+}
 
 input::placeholder {
     color: #fbc2eb;
@@ -261,3 +265,35 @@ input::placeholder {
 .timeline-content-info {
     font-size: 12px;
 }
+
+.tarot-outter-box {
+    position: fixed;
+    background-color: rgba(255, 255, 255, 0.25);
+    height: 80%;
+    top: 100px;
+    bottom: 40px;
+    display: flex;
+    width: 1600px;
+}
+
+
+    .tarot-outter-box .tarot-inner-box {
+        font-size: 21px;
+        font-weight: bold;
+        width:380px;
+        margin: 10px;
+    }
+
+        .tarot-outter-box .tarot-inner-box .tarot-img {
+            height: 600px;
+        }
+
+
+        .tarot-outter-box .tarot-inner-box .tarot-img-rotate {
+            height: 600px;
+            transform: rotate(180deg);
+        }
+
+    .tarot-outter-box .tarot-textbox {
+        text-align: center;
+    }

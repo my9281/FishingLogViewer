@@ -1,11 +1,21 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35506.116 d17.12
+VisualStudioVersion = 17.12.35506.116
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FishingLogMVC", "FishingLogMVC\FishingLogMVC.csproj", "{1FBA6FBF-9FE9-42D5-915C-598EF752CF11}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReaderInHTML", "ReaderInHTML\ReaderInHTML.csproj", "{B3F3E073-D83E-491D-AD1F-416BB8D4781B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{FCD46C97-2EE4-4883-B138-7438E7EA206F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FishingLog.Model", "FishingLog.Model\FishingLog.Model.csproj", "{B372FE11-7A44-4470-B613-8015B484D63F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FishingLog.BLL", "FishingLog.BLL\FishingLog.BLL.csproj", "{5A6392B3-D9BC-47AC-9AC6-7437D8BF92F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FishingLog.DAL", "FishingLog.DAL\FishingLog.DAL.csproj", "{74708775-E4A6-41D1-AFE0-73BC4C351E2A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FishingLog.DBUtility", "FishingLog.DBUtility\FishingLog.DBUtility.csproj", "{68C9877A-F434-44EE-A41D-974248DA6CA4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,8 +31,27 @@ Global
 		{B3F3E073-D83E-491D-AD1F-416BB8D4781B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B3F3E073-D83E-491D-AD1F-416BB8D4781B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B3F3E073-D83E-491D-AD1F-416BB8D4781B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B372FE11-7A44-4470-B613-8015B484D63F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B372FE11-7A44-4470-B613-8015B484D63F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B372FE11-7A44-4470-B613-8015B484D63F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B372FE11-7A44-4470-B613-8015B484D63F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A6392B3-D9BC-47AC-9AC6-7437D8BF92F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A6392B3-D9BC-47AC-9AC6-7437D8BF92F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A6392B3-D9BC-47AC-9AC6-7437D8BF92F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A6392B3-D9BC-47AC-9AC6-7437D8BF92F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74708775-E4A6-41D1-AFE0-73BC4C351E2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74708775-E4A6-41D1-AFE0-73BC4C351E2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74708775-E4A6-41D1-AFE0-73BC4C351E2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74708775-E4A6-41D1-AFE0-73BC4C351E2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68C9877A-F434-44EE-A41D-974248DA6CA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68C9877A-F434-44EE-A41D-974248DA6CA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68C9877A-F434-44EE-A41D-974248DA6CA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68C9877A-F434-44EE-A41D-974248DA6CA4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B3F3E073-D83E-491D-AD1F-416BB8D4781B} = {FCD46C97-2EE4-4883-B138-7438E7EA206F}
 	EndGlobalSection
 EndGlobal

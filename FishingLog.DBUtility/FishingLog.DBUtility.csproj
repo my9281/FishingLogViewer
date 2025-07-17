@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="BaseSqlMapDao.cs" />
+    <Compile Remove="DbHelperOleDb.cs" />
+    <Compile Remove="DbHelperOra.cs" />
+    <Compile Remove="DbHelperSQL.cs" />
+    <Compile Remove="DbHelperSQL2.cs" />
+    <Compile Remove="DbHelperSQLite.cs" />
+    <Compile Remove="DbHelperSQLP.cs" />
+    <Compile Remove="DESEncrypt.cs" />
+    <Compile Remove="OracleHelper.cs" />
+    <Compile Remove="PubConstant.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="FishingLog.suo" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="9.0.6" />
+    <PackageReference Include="MySql.Data" Version="9.3.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.9.0" />
+  </ItemGroup>
+
+</Project>

@@ -1,31 +1,34 @@
 ﻿
 $(document).ready(function () {
-
-
-
     const $target = $('#hoverTarget');
     const $box = $('#hoverBox');
-
-
-
-
-
-
-
-
-    var socket = new WebSocket("ws://" + window.location.href + "/ws");
-
+    var protocol = window.location.protocol === "https:" ? "wss://" : "ws://";
+    var socket = new WebSocket(protocol + window.location.host + "/ws");
     socket.onopen = function (event) {
         console.log("WebSocket connected.");
         socket.send("Hello Server!");
     };
-
     socket.onmessage = function (event) {
 
         $("#login-qrcode").empty();
         var dataObj = JSON.parse(event.data); // 解析成 JS 对象 
         if (dataObj.Status == "Login") { 
-            window.location.href = '/';
+            $.ajax({
+                type: 'POST',
+                url: '/api/users/LoginById',
+                data: dataObj,
+                success: function (response) {
+                    if (response == "-1") {
+                        alert("Wrong user or password.");
+                    }
+                    else {
+                        window.location.href = '/';
+                    }
+                },
+                error: function (xhr) {
+                    alert("service error.");
+                }
+            });
             console.log(dataObj);
         }
         else {

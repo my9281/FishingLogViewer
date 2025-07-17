@@ -10,6 +10,22 @@ namespace FishingLogMVC.Core
         {
             _httpContextAccessor = httpContextAccessor;
         }
+
+        public string GetUserID()
+        {
+            var context = _httpContextAccessor.HttpContext;
+
+            if (context == null)
+                return ""; // fallback
+
+            if (context.Request.Cookies.TryGetValue("Userid", out var lanCookie) &&
+                _supportedLanguages.Contains(lanCookie))
+            {
+                return lanCookie;
+            }
+            return "";
+        }
+
         public string GetUserLanguage()
         {
             var context = _httpContextAccessor.HttpContext;

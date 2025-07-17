@@ -4,18 +4,11 @@ namespace FishingLogMVC.Core
 {
     public class DBPassword
     {
-        public static string Login(string username, string password)
-        {
-            if (username == password)
-            {
-                return "1";
-            }
-            return "";
-        }
 
-        internal static object GetUserByID(string userId)
-        {
-            return userId == "1" ? "1" : null;
+        private static readonly FishingLog.BLL.user _u = new FishingLog.BLL.user();
+        public static string Login(string username, string password)
+        { 
+            return _u.GetUserId(username, password)??"" ;
         }
     }
 }

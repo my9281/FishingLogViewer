@@ -1,4 +1,5 @@
-﻿using FishingLogMVC.Core;
+﻿using FishingLog.DBUtility;
+using FishingLogMVC.Core;
 using FishingLogMVC.Interfaces;
 using FishingLogMVC.Middlewares;
 using FishingLogMVC.Models;
@@ -10,7 +11,7 @@ namespace FishingLogMVC
     public class Program
     {
         public static void Main(string[] args)
-        {
+        { 
             TransInfos.Init();
             var builder = WebApplication.CreateBuilder(args);
             builder.Services.AddControllersWithViews();
