@@ -26,9 +26,30 @@ namespace FishingLogMVC
             if (!app.Environment.IsDevelopment()) app.UseExceptionHandler("/Home/Error"); 
             app.UseWebSockets();
             app.MapControllerRoute(
-                name: "default",
+                name: "FishLog",
                 pattern: "{controller=Home}/{action=Index}/{lan?}")
+                .RequireHost("fishlog.ymforever.com") 
                 .WithStaticAssets();
+            app.MapControllerRoute(
+               name: "CMS",
+               pattern: "{controller=CMS}/{action=Index}/{lan?}")
+               .RequireHost("cms.ymforever.com")
+               .WithStaticAssets();
+            app.MapControllerRoute(
+               name: "YMCU",
+               pattern: "{controller=YMCU}/{action=Index}/{lan?}")
+               .RequireHost("ymcu.ymforever.com")
+               .WithStaticAssets();
+            app.MapControllerRoute(
+               name: "Rusume",
+               pattern: "{controller=Rusume}/{action=Index}/{lan?}")
+               .RequireHost("resume.ymforever.com")
+               .WithStaticAssets(); 
+            app.MapControllerRoute(
+               name: "Main",
+               pattern: "{controller=Main}/{action=Index}/{lan?}")
+               .RequireHost("www.ymforever.com","ymforever.com")
+               .WithStaticAssets();
             app.UseRouting();
             app.UseAuthorization();
 
