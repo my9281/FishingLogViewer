@@ -1,0 +1,54 @@
+﻿@{
+	ViewData["Title"] = "门派之巅计算器";
+}
+<div class="hed">
+	<h1 style="font-size: 15px;">本赛季结束时间为：</h1>
+	<span id="endtime">2025-11-12 23:59:59</span>
+</div>
+<div class="innermain"></div>
+<p class="des-s1">
+	当前：
+	<select id="s1">
+		<option id="0">天阙</option>
+		<option id="1">地庭</option>
+		<option id="2">玄武</option>
+		<option id="3">炎黄</option>
+		<option id="4">入化</option>
+		<option id="5">造极</option>
+		<option id="6">登峰</option>
+		<option id="7">星移</option>
+		<option id="8">白虹</option>
+		<option id="9">心境</option>
+		<option id="10">基境</option>
+		<option id="11">初境</option>
+	</select>
+	<input id="lev" value="1">
+	段
+	<input id="src" value="0">
+	分
+</p>
+<p class="des-s2">
+	<input type="checkbox" id="toggleDiv"> 高级
+</p>
+<p class="hiddiv des-s3" hidden="hidden">
+	目标：
+	<select id="s2">
+		<option id="0">天阙</option>
+		<option id="1">地庭</option>
+		<option id="2">玄武</option>
+		<option id="3">炎黄</option>
+		<option id="4">入化</option>
+		<option id="5">造极</option>
+		<option id="6">登峰</option>
+		<option id="7">星移</option>
+		<option id="8">白虹</option>
+		<option id="9">心境</option>
+		<option id="10">基境</option>
+		<option id="11">初境</option>
+	</select>
+	<input id="lev2" value="1" style="width:80px;"></input>
+	段
+</p>
+<button id="btn">确定</button>
+<p id="text"></p>
+<script src="~/js/mpzd.js"></script>

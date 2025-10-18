@@ -133,6 +133,12 @@ namespace FishingLog.BLL
         {
             return dal.GetListByPage(username, password);
         }
+
+        public string? Regist(Model.user user)
+        {
+            return dal.Regist(user);
+        }
+
         /// <summary>
         /// 分页获取数据列表
         /// </summary>

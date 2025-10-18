@@ -1,5 +1,4 @@
 ﻿using FishingLogMVC.Core;
-using System.Collections.Concurrent;
 using System.Net.WebSockets;
 
 namespace FishingLogMVC.Middlewares

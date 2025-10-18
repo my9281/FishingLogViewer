@@ -2,8 +2,6 @@
 using FishingLogMVC.Interfaces;
 using FishingLogMVC.Models;
 using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics.Metrics;
-using System.Net;
 using System.Numerics;
 using System.Security.Claims;
 using System.Security.Cryptography;
@@ -109,7 +107,7 @@ namespace FishingLogMVC.Controllers
                     textli.Add(tt);
                 }
                 else
-                { 
+                {
                     var tt = (ss[0] as TarotText).upright.domains.career;
                     textli.Add(tt);
                 }

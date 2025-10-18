@@ -1,17 +1,15 @@
-﻿using FishingLog.DBUtility;
-using FishingLogMVC.Core;
+﻿using FishingLogMVC.Core;
 using FishingLogMVC.Interfaces;
 using FishingLogMVC.Middlewares;
 using FishingLogMVC.Models;
 using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.AspNetCore.WebSockets;
-using System.Net.WebSockets;
+using Microsoft.AspNetCore.StaticFiles;
 namespace FishingLogMVC
 {
     public class Program
     {
         public static void Main(string[] args)
-        { 
+        {
             TransInfos.Init();
             var builder = WebApplication.CreateBuilder(args);
             builder.Services.AddControllersWithViews();
@@ -20,19 +18,12 @@ namespace FishingLogMVC
             builder.Services.AddScoped(typeof(ICookiesService<>), typeof(CookiesService<>));
             builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(options => options.LoginPath = "/Users/Login");
             builder.Services.AddControllersWithViews(options => options.Filters.Add<LanguageFilter>());
-
             builder.Services.AddSingleton<WebSocketConnectionManager>();
-
-            var app = builder.Build();
+            var app = builder.Build(); 
 
             app.UseWebSockets();
             app.UseMiddleware<FishWebSocketMiddleware>();
-
-
-            if (!app.Environment.IsDevelopment())
-            {
-                app.UseExceptionHandler("/Home/Error");
-            }
+            if (!app.Environment.IsDevelopment()) app.UseExceptionHandler("/Home/Error"); 
             app.UseWebSockets();
             app.MapControllerRoute(
                 name: "default",
@@ -40,8 +31,10 @@ namespace FishingLogMVC
                 .WithStaticAssets();
             app.UseRouting();
             app.UseAuthorization();
+
+
             app.MapStaticAssets();
             app.Run();
-        } 
+        }
     }
 }

@@ -54,6 +54,10 @@ namespace FishingLogMVC.Core
             {
                 var c = context.Controller as Controller;
                 var dic = TransInfos.Dictionary.Where(ex => ex.Lan == laning).ToList();
+
+
+
+
                 var nowdi = new Dictionary<string, string>();
                 foreach (var item in dic)
                 {

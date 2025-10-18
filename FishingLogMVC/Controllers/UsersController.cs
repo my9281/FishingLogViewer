@@ -1,4 +1,5 @@
-﻿using FishingLogMVC.Core;
+﻿using FishingLog.Model;
+using FishingLogMVC.Core;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
@@ -15,20 +16,36 @@ namespace FishingLogMVC.Controllers
         public UsersController(WebSocketConnectionManager wsManager)
         {
             _controlled = Guid.NewGuid().ToString();
-            _wsManager = wsManager; 
+            _wsManager = wsManager;
         }
         [AllowAnonymous]
         public IActionResult Login()
         {
-            return View(); 
+            return View();
+        }
+        [AllowAnonymous]
+        public IActionResult Regist()
+        {
+            return View();
         }
 
+        [AllowAnonymous] 
+        [HttpPost("/api/Users/RegistData")]
+        public async Task<IActionResult> RegistData(user id)
+        {
+            id.nickname = id.username;
+            id.birthday = DateTime.Now;
+            id.isadmin = false;
+
+            var userId = DBPassword.Regist(id);
+            return Json(userId);
+        }
         [AllowAnonymous]
         [HttpGet("Loginbyqr")]
         [HttpGet("/api/Users/Loginbyqr")]
         public async Task<IActionResult> Loginbyqr(string id)
         {
-       
+
             _wsManager.Accept(id);
 
             return Json("扫码成功");

@@ -4,6 +4,7 @@ using System.Data;
 using System.Runtime.Intrinsics.Arm;
 using System.Security.Cryptography;
 using System.Text;
+using System.Linq;
 namespace FishingLog.DAL
 {
     /// <summary>
@@ -309,6 +310,40 @@ namespace FishingLog.DAL
                 {
                     return "";
                 }
+            }
+        }
+
+        public string? Regist(Model.user user)
+        {
+            using (SHA512 sha512 = SHA512.Create())
+            {
+                byte[] bytes = Encoding.UTF8.GetBytes(user.password ?? "");
+                byte[] hashBytes = sha512.ComputeHash(bytes);
+                StringBuilder sb = new StringBuilder();
+                foreach (var b in hashBytes)
+                {
+                    sb.Append(b.ToString("x2"));
+                }
+                var ps = sb.ToString().Substring(0, 32);
+                StringBuilder strSql = new StringBuilder();
+                strSql.Append("CALL `user_insert`(@username, @password, @nickname,@birthday, 0, @location);");
+                MySqlParameter[] parameters = {
+                    new MySqlParameter("@username", MySqlDbType.VarChar,50),
+                    new MySqlParameter("@password", MySqlDbType.VarChar,50),
+                    new MySqlParameter("@nickname", MySqlDbType.VarChar,50),
+                    new MySqlParameter("@birthday", MySqlDbType.Date),
+                    new MySqlParameter("@isadmin", MySqlDbType.Bit,1),
+                    new MySqlParameter("@location", MySqlDbType.VarChar,50)};
+                parameters[0].Value = user.username;
+                parameters[1].Value = ps;
+                parameters[2].Value = user.nickname;
+                parameters[3].Value = user.birthday;
+                parameters[4].Value = 0;
+                parameters[5].Value = "";
+
+                DataSet ds = DbHelperMySQL.Query(strSql.ToString(), parameters);
+                var row = ds?.Tables?[0].Rows?[0]?[0]?.ToString();
+                return row;
             }
         }
         #endregion  ExtensionMethod

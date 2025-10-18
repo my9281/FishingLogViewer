@@ -1,0 +1,182 @@
+[
+  {
+    "Key": "AccountID",
+    "Value": "Account ID :",
+    "Lan": "en"
+  },
+  {
+    "Key": "AccountID",
+    "Value": "通行證號 ：",
+    "Lan": "zh-TW"
+  },
+  {
+    "Key": "AccountID",
+    "Value": "账号 :",
+    "Lan": "zh-CN"
+  },
+  {
+    "Key": "Regist",
+    "Value": "Regist",
+    "Lan": "en"
+  },
+  {
+    "Key": "Regist",
+    "Value": "註冊",
+    "Lan": "zh-TW"
+  },
+  {
+    "Key": "Regist",
+    "Value": "注册",
+    "Lan": "zh-CN"
+  },
+  {
+    "Key": "AccountIDPH",
+    "Value": "Input your accountid",
+    "Lan": "en"
+  },
+  {
+    "Key": "AccountIDPH",
+    "Value": "您的通行證號碼",
+    "Lan": "zh-TW"
+  },
+  {
+    "Key": "AccountIDPH",
+    "Value": "您的账号",
+    "Lan": "zh-CN"
+  },
+  {
+    "Key": "Fortune",
+    "Value": "Fortune",
+    "Lan": "en"
+  },
+  {
+    "Key": "Fortune",
+    "Value": "今日運勢",
+    "Lan": "zh-TW"
+  },
+  {
+    "Key": "Fortune",
+    "Value": "今日运势",
+    "Lan": "zh-CN"
+  },
+  {
+    "Key": "Login",
+    "Value": "Login",
+    "Lan": "en"
+  },
+  {
+    "Key": "Login",
+    "Value": "登錄",
+    "Lan": "zh-TW"
+  },
+  {
+    "Key": "Login",
+    "Value": "登录",
+    "Lan": "zh-CN"
+  },
+  {
+    "Key": "logout",
+    "Value": "Logout",
+    "Lan": "en"
+  },
+  {
+    "Key": "logout",
+    "Value": "註銷",
+    "Lan": "zh-TW"
+  },
+  {
+    "Key": "logout",
+    "Value": "退出",
+    "Lan": "zh-CN"
+  },
+  {
+    "Key": "Password",
+    "Value": "Password :",
+    "Lan": "en"
+  },
+  {
+    "Key": "Password",
+    "Value": "密鑰 ：",
+    "Lan": "zh-TW"
+  },
+  {
+    "Key": "Password",
+    "Value": "密码 ：",
+    "Lan": "zh-CN"
+  },
+  {
+    "Key": "PasswordPH",
+    "Value": "Input your password",
+    "Lan": "en"
+  },
+  {
+    "Key": "PasswordPH",
+    "Value": "您的秘鑰",
+    "Lan": "zh-TW"
+  },
+  {
+    "Key": "PasswordPH",
+    "Value": "您的密码",
+    "Lan": "zh-CN"
+  },
+  {
+    "Key": "Resume",
+    "Value": "Resume",
+    "Lan": "en"
+  },
+  {
+    "Key": "Resume",
+    "Value": "簡歷",
+    "Lan": "zh-TW"
+  },
+  {
+    "Key": "Resume",
+    "Value": "简历",
+    "Lan": "zh-CN"
+  },
+  {
+    "Key": "RecheckPassword",
+    "Value": "Check Password",
+    "Lan": "en"
+  },
+  {
+    "Key": "RecheckPassword",
+    "Value": "检查密码",
+    "Lan": "zh-TW"
+  },
+  {
+    "Key": "RecheckPassword",
+    "Value": "检查密码",
+    "Lan": "zh-CN"
+  },
+  {
+    "Key": "Submit",
+    "Value": "Submit",
+    "Lan": "en"
+  },
+  {
+    "Key": "Submit",
+    "Value": "確認",
+    "Lan": "zh-TW"
+  },
+  {
+    "Key": "Submit",
+    "Value": "提交",
+    "Lan": "zh-CN"
+  },
+  {
+    "Key": "Title",
+    "Value": "Fishing project log viewer",
+    "Lan": "en"
+  },
+  {
+    "Key": "Title",
+    "Value": "摸魚記錄瀏覽器",
+    "Lan": "zh-TW"
+  },
+  {
+    "Key": "Title",
+    "Value": "摸鱼日志查看器",
+    "Lan": "zh-CN"
+  }
+]

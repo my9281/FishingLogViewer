@@ -2,7 +2,7 @@
 {
     public class TarotText
     {
- 
+
         public string name { get; set; }
         public Upright upright { get; set; }
         public Reversed reversed { get; set; }

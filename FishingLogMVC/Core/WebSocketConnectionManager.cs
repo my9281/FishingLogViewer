@@ -1,9 +1,7 @@
-﻿using System.Collections.Concurrent;
-using System.Diagnostics;
-using System.Net.Sockets;
-using System.Net.WebSockets;
-using FishingLogMVC.Models;
+﻿using FishingLogMVC.Models;
 using Newtonsoft.Json;
+using System.Collections.Concurrent;
+using System.Net.WebSockets;
 namespace FishingLogMVC.Core
 {
     public class WebSocketConnectionManager

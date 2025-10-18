@@ -10,7 +10,7 @@ namespace FishingLogMVC.Core
         public NoSQLDBService(IHttpContextAccessor httpContextAccessor)
         {
             _httpContextAccessor = httpContextAccessor;
-        } 
+        }
         public LiteDatabase GetDB()
         {
             return innerdb;

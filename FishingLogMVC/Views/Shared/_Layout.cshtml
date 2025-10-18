@@ -41,7 +41,8 @@
 			</div>
 			@if (User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value != null)
 			{
-				<a class="logout-btn" href="/Tarot/Index">@ViewBag.Dic["Fortune"]</a>
+				<a class="logout-btn" href="/Tarot/Index">@ViewBag.Dic["Fortune"]</a> 
+				<a class="logout-btn" href="/Resume">@ViewBag.Dic["Resume"]</a>
 				<a class="logout-btn" href="/Users/Logout">@ViewBag.Dic["logout"]</a>
 
 			}
@@ -51,7 +52,6 @@
 	</canvas>
 	@RenderBody()
 	@RenderSection("Scripts", required: false)
-	<script type="text/javascript" src="~/js/users/login.js"></script>
 	<script type="text/javascript" src="~/js/users/script.js"></script>
 </body>
 </html>

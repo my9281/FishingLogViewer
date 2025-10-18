@@ -6,4 +6,4 @@ namespace FishingLogMVC.Interfaces
     {
         LiteDatabase GetDB();
     }
-} 
+}
