@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>莲香楼 - @ViewData["Title"]</title>
+    <script type="importmap"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script> 
+    <link rel="stylesheet" href="~/css/ymcu.css" asp-append-version="true" /> 
+</head>
+<body> 
+    <div class="header-section"><img src="/img/logo.webp" id="logo"/>
+        <h1> @ViewData["Title"]</h1>
+    </div>
+    <div class="main">
+    @RenderBody() 
+    </div>
+    <footer class="text-muted">
+        <div class="container">
+            莲香楼小筑 —— 宋秋宁Project
+        </div>
+    </footer> 
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

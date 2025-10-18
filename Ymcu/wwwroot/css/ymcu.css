@@ -1,0 +1,90 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+ 
+.main {
+    position: absolute;
+    top: 60px;
+    bottom: 30px;
+}
+.header-section {
+    position: absolute;
+}
+.header-section #logo { 
+    width: 150px;
+    float:left;
+    display: inline-block;
+}
+.header-section h1 {
+    font-size: 18px;  
+    margin-left:160px; 
+    width:150px;
+    position:inherit;
+    float:left;
+}
+.des-s1{
+    font-size:18px;
+}
+.des-s2 {
+    font-size: 18px;
+}
+.des-s3 {
+    font-size: 18px;
+}
+#s1 {
+    width: 80px;
+    height: 40px;
+    font-size: 18px;
+    text-align: center;
+}
+#lev {
+    width: 30px;
+    height: 36px;
+    font-size: 18px;
+    text-align: center;
+}
+#src {
+    width: 30px;
+    height: 36px;
+    font-size: 18px;
+    text-align: center;
+}
+#s2 {
+    width: 80px;
+    height: 40px;
+    font-size: 18px;
+    text-align: center;
+}
+
+#lev2 {
+    width: 30px;
+    height: 36px;
+    font-size: 18px;
+    text-align: center;
+}
+#btn{
+    width:80px;
+    height:60px;
+    font-size:18px;
+}
+#text {
+    font-size: 18px;
+}
+footer {
+    position: absolute;
+    bottom: -1px;
+    text-align:center;
+    width:94%;
+    margin-top:4px;
+    margin-bottom:4px;
+}
