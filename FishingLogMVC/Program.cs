@@ -41,8 +41,8 @@ namespace FishingLogMVC
                .RequireHost("ymcu.ymforever.com")
                .WithStaticAssets();
             app.MapControllerRoute(
-               name: "Rusume",
-               pattern: "{controller=Rusume}/{action=Index}/{lan?}")
+               name: "Resume",
+               pattern: "{controller=Resume}/{action=Index}/{lan?}")
                .RequireHost("resume.ymforever.com")
                .WithStaticAssets(); 
             app.MapControllerRoute(
