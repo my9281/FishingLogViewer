@@ -20,15 +20,14 @@ namespace FishingLogMVC
             builder.Services.AddControllersWithViews(options => options.Filters.Add<LanguageFilter>());
             builder.Services.AddSingleton<WebSocketConnectionManager>();
             var app = builder.Build(); 
-
             app.UseWebSockets();
             app.UseMiddleware<FishWebSocketMiddleware>();
-            if (!app.Environment.IsDevelopment()) app.UseExceptionHandler("/Home/Error"); 
+            if (!app.Environment.IsDevelopment()) app.UseExceptionHandler("/Home/Error");
             app.UseWebSockets();
             app.MapControllerRoute(
                 name: "FishLog",
                 pattern: "{controller=Home}/{action=Index}/{lan?}")
-                .RequireHost("fishlog.ymforever.com") 
+                .RequireHost("fishlog.ymforever.com")
                 .WithStaticAssets();
             app.MapControllerRoute(
                name: "CMS",
@@ -44,16 +43,20 @@ namespace FishingLogMVC
                name: "Resume",
                pattern: "{controller=Resume}/{action=Index}/{lan?}")
                .RequireHost("resume.ymforever.com")
-               .WithStaticAssets(); 
+               .WithStaticAssets();
             app.MapControllerRoute(
                name: "Main",
                pattern: "{controller=Main}/{action=Index}/{lan?}")
-               .RequireHost("www.ymforever.com","ymforever.com")
-               .WithStaticAssets();
+               .RequireHost("www.ymforever.com", "ymforever.com")
+               .WithStaticAssets(); 
+#if DEBUG
+            app.MapControllerRoute(
+                name: "default",
+                pattern: "{controller=Home}/{action=Index}/{lan?}")
+                .WithStaticAssets();
+#endif 
             app.UseRouting();
-            app.UseAuthorization();
-
-
+            app.UseAuthorization(); 
             app.MapStaticAssets();
             app.Run();
         }

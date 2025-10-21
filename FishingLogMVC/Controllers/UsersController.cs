@@ -45,9 +45,7 @@ namespace FishingLogMVC.Controllers
         [HttpGet("/api/Users/Loginbyqr")]
         public async Task<IActionResult> Loginbyqr(string id)
         {
-
             _wsManager.Accept(id);
-
             return Json("扫码成功");
         }
 

@@ -1,0 +1,57 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<div class="login">
+	<div style="height:480px;width:700px;padding:10px;">
+		<h2 class="login-header">联系我：</h2>
+		<table style="width:100%;color:white"> 
+			<tr>
+				<td  >
+					<span>标题：</span>
+				</td>
+				<td width="90%">
+					<input id ="title">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<span>用户：</span>
+				</td>
+				<td>
+					<input id ="user">
+				</td>
+			</tr>
+		</table> 
+		<textarea class="txtar"   id="text"></textarea>
+		<button class="login_btn" id="submit">提交</button>
+	</div>
+</div>
+<script>
+	(function(){
+		$('#submit').click(function(){
+			var formData = {
+				ntitle: $('#title').val(),
+				nuser: $('#user').val(),
+				ntext: $('#text').val()
+			};
+			$.ajax({
+				type: 'POST',
+				url: '/api/cms/AddNote',
+				data: formData,
+				success: function (response) {
+					if (response != "") {
+						alert(response);
+					}
+					else {
+						window.location.href = '/';
+					}
+				},
+				error: function (xhr) {
+					alert("service error.");
+				}
+			});
+		});
+	})();
+</script>

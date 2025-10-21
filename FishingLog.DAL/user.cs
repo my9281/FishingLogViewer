@@ -1,10 +1,8 @@
 ﻿using FishingLog.DBUtility;
 using MySql.Data.MySqlClient;
 using System.Data;
-using System.Runtime.Intrinsics.Arm;
 using System.Security.Cryptography;
 using System.Text;
-using System.Linq;
 namespace FishingLog.DAL
 {
     /// <summary>

@@ -1,0 +1,12 @@
+{
+    "cn": {
+        "connect-error": "无法连接网络",
+        "notfound-error": "未找到中文字典",
+        "welcomeword":"欢迎使用"
+    },
+    "en": {
+        "connect-error": "Can not connect",
+        "notfound-error": "Can not found engish",
+        "welcomeword":"Welcome to fishlog-resume"
+    }
+}
