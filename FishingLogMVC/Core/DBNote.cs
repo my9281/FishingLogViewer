@@ -11,31 +11,31 @@ namespace FishingLogMVC.Core
         {
             if (content.ntext?.Length > 1500)
             {
-                return "内容过长，限制1500字以内";
+                return "The content is too lengthy. Please limit it to within 1500 words.";
             }
             else if (content.ntitle?.Length > 150)
             {
-                return "标题过长，限制150字以内";
+                return "The title is too lengthy. Please limit it to within 150 words.";
             }
             else if (content.nuser?.Length > 50)
             {
-                return "用户名过长，限制50字以内";
+                return "The username is too lengthy. Please limit it to within 50 words.";
             }
             else if (string.IsNullOrEmpty(content.ntext))
             {
-                return "内容不能为空";
+                return "The content cannot be empty.";
             }
             else if (string.IsNullOrEmpty(content.ntitle))
             {
-                return "标题不能为空";
+                return "The Title cannot be empty.";
             }
             else if (_u.AddNote(content))
             {
-                return "成功";
+                return "Good Job. Thank you.";
             }
             else
             {
-                return "失败，请稍后重试";
+                return "Fail.";
             }   
         }
     }

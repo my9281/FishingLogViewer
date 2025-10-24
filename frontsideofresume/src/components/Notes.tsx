@@ -1,23 +1,26 @@
-import React, { useState, useEffect } from 'react'
-export default function Notes() {
-    const [data, setData] = useState(null)
-    const [loading, setLoading] = useState(true)
+ 
+import   { useState } from 'react';  
 
-    useEffect(() => {
-        // 发起 AJAX 请求
-        fetch('/api/CMS/AddNote')
-            .then(res => res.json())
-            .then(json => {
-                setData(json)
-                setLoading(false)
-            })
-            .catch(err => {
-                console.error('请求失败:', err)
-                setLoading(false)
-            })
-    }, []) 
+export default function Notes() { 
+    const [title, setTitle] = useState('');
+    const [user, setUser] = useState('');
+    const [text, setText] = useState('');
 
-    if (loading) return <div>加载中...</div>
+    const handleSubmit = () => {
+        const formData = { ntitle: title, nuser: user, ntext: text };
+        console.log(formData);
+        fetch('/api/cms/AddNote', {
+            method: 'POST', 
+            body: new URLSearchParams(formData)
+        })
+            .then(res => res.text())
+            .then(response => {
+                alert(response);
+            })
+            .catch(() => alert('service error.'));
+
+    };
+
     return (
         <>
             <div className="mb-6 dialog-box">
@@ -34,9 +37,41 @@ export default function Notes() {
                 </ul>
             </div>
             <div className="mb-6 dialog-box">
+                <h2 className="text-xl font-bold text-white undertile-headertitle">Message board</h2>
+                <table>
+                    <tr>
+                        <td className="Note-Table-Subtitle">
+                            <span>Message Title：</span>
+                        </td>
+                        <td className="Note-Table-Content">
+                            <input id="title" value={title}
+                                onChange={e => setTitle(e.target.value)}></input>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td className="Note-Table-Subtitle">
+                            <span>Your Name：</span>
+                        </td>
+                        <td className="Note-Table-Content">
+                            <input id="user" value={user}
+                                onChange={e => setUser(e.target.value)}></input>
+                        </td>
+                    </tr>
+                </table>
+                <div className="Content-Title-Border">
+                    <span className="Content-Title">Content:</span>
+                </div>
+                <textarea className="txtar"
+                    id="text"
+                    value={text}
+                    onChange={e => setText(e.target.value)}></textarea>
+                <button className="login_btn" id="submit" onClick={handleSubmit}>Send it</button>
+            </div>
+            <div className="mb-6 dialog-box">
                 <h2 className="text-xl font-bold text-white undertile-headertitle"> Ad Space</h2>
                 {["Well, this website still needs a little advertising space — after all, keeping the server running every year isn’t exactly cheap.",
-                    "If you’re interested in placing an ad, feel free to get in touch with me!"].map((text, i) => (
+                    "If you’re interested in placing an ad, feel free to get in touch with me!"
+                ].map((text, i) => (
                         <li key={i} className="undertale-li" data-icon={i % 7}>{text}</li>
                     ))}
                 <p className="undertale-li">Of course, you can also visit the site’s main page: <a href="/">Fishlog.</a></p>
