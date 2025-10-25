@@ -41,7 +41,12 @@
 			</div>
 			@if (User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value != null)
 			{
-				<a class="logout-btn" href="/Tarot/Index">@ViewBag.Dic["Fortune"]</a> 
+				var p = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+				if (p == "1")
+				{
+					<a class="logout-btn" href="/CMS/Admin">查看后台</a>
+				}
+				<a class="logout-btn" href="/Tarot/Index">@ViewBag.Dic["Fortune"]</a>
 				<a class="logout-btn" href="/Resume">@ViewBag.Dic["Resume"]</a>
 				<a class="logout-btn" href="/Users/Logout">@ViewBag.Dic["logout"]</a>
 

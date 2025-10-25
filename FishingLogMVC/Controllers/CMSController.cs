@@ -25,5 +25,14 @@ namespace FishingLogMVC.Controllers
         {
             return View();
         }
+
+
+        [Authorize]
+        public IActionResult Admin()
+        {
+            ViewBag.Count = DBNote.GetAllCount();
+            ViewBag.datalist= DBNote.GetTopContents();
+            return View();
+        }
     }
 }

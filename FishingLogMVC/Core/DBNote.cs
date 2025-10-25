@@ -1,4 +1,5 @@
 ﻿using FishingLog.Model;
+using System.Threading.Tasks.Dataflow;
 
 namespace FishingLogMVC.Core
 {
@@ -6,7 +7,10 @@ namespace FishingLogMVC.Core
     {
         private static readonly FishingLog.BLL.note _u = new FishingLog.BLL.note();
 
-
+        public static List<note> GetTopContents()
+        {
+            return _u.GetTopContents();
+        }
         public static string AddNote(note content)
         {
             if (content.ntext?.Length > 1500)
@@ -37,6 +41,11 @@ namespace FishingLogMVC.Core
             {
                 return "Fail.";
             }   
+        }
+
+        internal static int GetAllCount()
+        {
+            return _u.GetRecordCount("");
         }
     }
 }
