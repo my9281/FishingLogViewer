@@ -27,7 +27,7 @@ namespace FishingLogMVC
             app.MapControllerRoute(
                 name: "FishLog",
                 pattern: "{controller=Home}/{action=Index}/{lan?}")
-                .RequireHost("fishlog.ymforever.com")
+                .RequireHost("fishlog.ymforever.com","127.0.0.1:8011")
                 .WithStaticAssets();
             app.MapControllerRoute(
                name: "CMS",
@@ -47,7 +47,7 @@ namespace FishingLogMVC
             app.MapControllerRoute(
                name: "Main",
                pattern: "{controller=Main}/{action=Index}/{lan?}")
-               .RequireHost("www.ymforever.com", "ymforever.com")
+               .RequireHost("www.ymforever.com", "ymforever.com","127.0.0.1")
                .WithStaticAssets(); 
 #if DEBUG
             app.MapControllerRoute(

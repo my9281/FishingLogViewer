@@ -4,8 +4,7 @@ export default function Resume() {
     const heartItems = [
         "Backend engineer with 8+ years of experience in .NET development, specializing in C#, ASP.NET Core, API design, and scalable system architecture.",
         "Led or contributed to engineering initiatives across MullenLowe, Microsoft-linked platforms, and Apple-adjacent projects, delivering backend solutions integrated with Azure and CI/CD pipelines. Certified in PMP and MCSA (Web Applications), combining system engineering depth with disciplined project execution.",
-        "Legally authorized to work in the U.S. (EAD – C09, marriage-based green card process); no employer sponsorship required."
-    ];
+        ];
 
     const skillItems = [
         "Backend: C#, ASP.NET core (.NET 9), RESTful API, OAuth2.0, WPF, WCF, middleware architecture",

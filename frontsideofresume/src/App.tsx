@@ -15,6 +15,7 @@ function Dic(key: string): string {
 }
 function App() {
     lang = navigator.language.startsWith("zh") ? "cn" : "en";
+    console.log("Language set to:", lang);
     console.log(Dic("welcomeword"));
     const [tab, setTab] = useState("resume");
     return (

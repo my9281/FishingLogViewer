@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FishingLog.DBUtility", "Fis
 EndProject
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "frontsideofresume", "FrontSideOfResume\frontsideofresume.esproj", "{CFDC4DE2-EDF9-508D-2790-CA3D877ED0E5}"
 EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "AngularProjectFishing", "AngularProjectFishing\AngularProjectFishing.esproj", "{D47315AE-565C-39A6-B6FD-AA7A24B864E2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,12 @@ Global
 		{CFDC4DE2-EDF9-508D-2790-CA3D877ED0E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CFDC4DE2-EDF9-508D-2790-CA3D877ED0E5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CFDC4DE2-EDF9-508D-2790-CA3D877ED0E5}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{D47315AE-565C-39A6-B6FD-AA7A24B864E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D47315AE-565C-39A6-B6FD-AA7A24B864E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D47315AE-565C-39A6-B6FD-AA7A24B864E2}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{D47315AE-565C-39A6-B6FD-AA7A24B864E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D47315AE-565C-39A6-B6FD-AA7A24B864E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D47315AE-565C-39A6-B6FD-AA7A24B864E2}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
