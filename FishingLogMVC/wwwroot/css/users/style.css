@@ -112,10 +112,10 @@ body {
 
 .login-box {
     display: flex;
-    flex-direction: row; /* ºáÏòÅÅÁĞ */
-    justify-content: center; /* Ë®Æ½¾ÓÖĞ */
-    align-items: flex-start; /* ¶¥²¿¶ÔÆë */
-    gap: 40px; /* ×óÓÒÄ£¿é¼ä¾à£¬¿É¸ù¾İĞèÒªµ÷Õû */
+    flex-direction: row; /* æ¨ªå‘æ’åˆ— */
+    justify-content: center; /* æ°´å¹³å±…ä¸­ */
+    align-items: flex-start; /* é¡¶éƒ¨å¯¹é½ */
+    gap: 40px; /* å·¦å³æ¨¡å—é—´è·ï¼Œå¯æ ¹æ®éœ€è¦è°ƒæ•´ */
 }
 
     .login-box .login-template {
@@ -311,11 +311,11 @@ input::placeholder {
     }
 
     .timeline-item.left::before {
-        right: -15px; /* Ô²µãÌùÖĞÏß */
+        right: -15px; /* åœ†ç‚¹è´´ä¸­çº¿ */
     }
 
     .timeline-item.right::before {
-        left: -15px; /* Ô²µãÌùÖĞÏß */
+        left: -15px; /* åœ†ç‚¹è´´ä¸­çº¿ */
     }
 
 .timeline-content-info {
@@ -353,3 +353,17 @@ input::placeholder {
     .tarot-outter-box .tarot-textbox {
         text-align: center;
     }
+
+.tarot-title {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 32px;
+    letter-spacing: 1px;
+}
+
+.tarot-outter-box .tarot-textbox .tarot-domain {
+    display: block;
+    font-size: 18px;
+    margin-top: 6px;
+    color: #1d3557;
+}

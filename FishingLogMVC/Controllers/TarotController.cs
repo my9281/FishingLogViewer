@@ -99,62 +99,43 @@ namespace FishingLogMVC.Controllers
                 string json = System.IO.File.ReadAllText("tarottext.json");
 
                 var ss = Newtonsoft.Json.JsonConvert.DeserializeObject<List<TarotText>>(json);
+                var domains = new List<(string Domain, string DictionaryKey)> {
+                    ("career", "TarotDomainCareer"),
+                    ("love", "TarotDomainLove"),
+                    ("health", "TarotDomainHealth"),
+                    ("mind", "TarotDomainMind")
+                };
 
-                var textli = new List<string>();
-                if (isutd0)
+                var cardResults = new List<TarotCardResult>();
+                for (int i = 0; i < re.Count; i++)
                 {
-                    var tt = (ss[0] as TarotText).reversed.domains.career;
-                    textli.Add(tt);
-                }
-                else
-                {
-                    var tt = (ss[0] as TarotText).upright.domains.career;
-                    textli.Add(tt);
-                }
+                    var cardIndex = re[i];
+                    var cardText = ss?[cardIndex];
+                    var isReversed = ViewBag.CardsUtd[i];
+                    var domainKey = domains[i];
 
+                    string description = domainKey.Domain switch
+                    {
+                        "career" => isReversed ? cardText?.reversed.domains.career ?? string.Empty : cardText?.upright.domains.career ?? string.Empty,
+                        "love" => isReversed ? cardText?.reversed.domains.love ?? string.Empty : cardText?.upright.domains.love ?? string.Empty,
+                        "health" => isReversed ? cardText?.reversed.domains.health ?? string.Empty : cardText?.upright.domains.health ?? string.Empty,
+                        _ => isReversed ? cardText?.reversed.domains.mind ?? string.Empty : cardText?.upright.domains.mind ?? string.Empty
+                    };
 
-                if (isutd1)
-                {
-                    var tt = (ss[1] as TarotText).reversed.domains.love;
-                    textli.Add(tt);
-                }
-                else
-                {
-                    var tt = (ss[1] as TarotText).upright.domains.love;
-                    textli.Add(tt);
-                }
-
-
-                if (isutd2)
-                {
-                    var tt = (ss[2] as TarotText).reversed.domains.health;
-                    textli.Add(tt);
-                }
-                else
-                {
-                    var tt = (ss[2] as TarotText).upright.domains.health;
-                    textli.Add(tt);
+                    cardResults.Add(new TarotCardResult
+                    {
+                        CardIndex = cardIndex,
+                        LocalizedName = li[i],
+                        BaseName = cardText?.name ?? string.Empty,
+                        Description = description,
+                        IsReversed = isReversed,
+                        DomainKey = domainKey.DictionaryKey
+                    });
                 }
 
-
-                if (isutd3)
-                {
-                    var tt = (ss[3] as TarotText).reversed.domains.mind;
-                    textli.Add(tt);
-                }
-                else
-                {
-                    var tt = (ss[3] as TarotText).upright.domains.mind;
-                    textli.Add(tt);
-                }
-
-
-
-                ViewBag.TarotText = textli.ToArray();
-
-                ViewBag.result = result;
+                return View(cardResults);
             }
-            return View();
+            return View(new List<TarotCardResult>());
         }
     }
 }

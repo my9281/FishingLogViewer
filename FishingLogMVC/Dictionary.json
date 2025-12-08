@@ -178,5 +178,260 @@
     "Key": "Title",
     "Value": "摸鱼日志查看器",
     "Lan": "zh-CN"
+  },
+  {
+    "Key": "Profile",
+    "Value": "Profile",
+    "Lan": "en"
+  },
+  {
+    "Key": "Profile",
+    "Value": "個人資料",
+    "Lan": "zh-TW"
+  },
+  {
+    "Key": "Profile",
+    "Value": "个人资料",
+    "Lan": "zh-CN"
+  },
+  {
+    "Key": "ProfileTitle",
+    "Value": "Edit profile",
+    "Lan": "en"
+  },
+  {
+    "Key": "ProfileTitle",
+    "Value": "編輯個人資料",
+    "Lan": "zh-TW"
+  },
+  {
+    "Key": "ProfileTitle",
+    "Value": "编辑个人资料",
+    "Lan": "zh-CN"
+  },
+  {
+    "Key": "Nickname",
+    "Value": "Nickname :",
+    "Lan": "en"
+  },
+  {
+    "Key": "Nickname",
+    "Value": "暱稱 ：",
+    "Lan": "zh-TW"
+  },
+  {
+    "Key": "Nickname",
+    "Value": "昵称 ：",
+    "Lan": "zh-CN"
+  },
+  {
+    "Key": "NicknamePH",
+    "Value": "How should we call you?",
+    "Lan": "en"
+  },
+  {
+    "Key": "NicknamePH",
+    "Value": "您希望被怎麼稱呼?",
+    "Lan": "zh-TW"
+  },
+  {
+    "Key": "NicknamePH",
+    "Value": "您希望被怎么称呼?",
+    "Lan": "zh-CN"
+  },
+  {
+    "Key": "Location",
+    "Value": "Location :",
+    "Lan": "en"
+  },
+  {
+    "Key": "Location",
+    "Value": "所在地 ：",
+    "Lan": "zh-TW"
+  },
+  {
+    "Key": "Location",
+    "Value": "所在地 ：",
+    "Lan": "zh-CN"
+  },
+  {
+    "Key": "LocationPH",
+    "Value": "Where are you based?",
+    "Lan": "en"
+  },
+  {
+    "Key": "LocationPH",
+    "Value": "請輸入所在城市",
+    "Lan": "zh-TW"
+  },
+  {
+    "Key": "LocationPH",
+    "Value": "请输入所在城市",
+    "Lan": "zh-CN"
+  },
+  {
+    "Key": "Birthday",
+    "Value": "Birthday :",
+    "Lan": "en"
+  },
+  {
+    "Key": "Birthday",
+    "Value": "生日 ：",
+    "Lan": "zh-TW"
+  },
+  {
+    "Key": "Birthday",
+    "Value": "生日 ：",
+    "Lan": "zh-CN"
+  },
+  {
+    "Key": "Save",
+    "Value": "Save",
+    "Lan": "en"
+  },
+  {
+    "Key": "Save",
+    "Value": "保存",
+    "Lan": "zh-TW"
+  },
+  {
+    "Key": "Save",
+    "Value": "保存",
+    "Lan": "zh-CN"
+  },
+  {
+    "Key": "ProfileSaved",
+    "Value": "Profile updated",
+    "Lan": "en"
+  },
+  {
+    "Key": "ProfileSaved",
+    "Value": "個人資料已更新",
+    "Lan": "zh-TW"
+  },
+  {
+    "Key": "ProfileSaved",
+    "Value": "个人资料已更新",
+    "Lan": "zh-CN"
+  },
+  {
+    "Key": "ProfileSaveFailed",
+    "Value": "Unable to save profile",
+    "Lan": "en"
+  },
+  {
+    "Key": "ProfileSaveFailed",
+    "Value": "保存失敗，請稍後再試",
+    "Lan": "zh-TW"
+  },
+  {
+    "Key": "ProfileSaveFailed",
+    "Value": "保存失败，请稍后再试",
+    "Lan": "zh-CN"
+  },
+  {
+    "Key": "TarotResultTitle",
+    "Value": "Tarot Reading",
+    "Lan": "en"
+  },
+  {
+    "Key": "TarotResultTitle",
+    "Value": "塔羅占卜",
+    "Lan": "zh-TW"
+  },
+  {
+    "Key": "TarotResultTitle",
+    "Value": "塔罗占卜",
+    "Lan": "zh-CN"
+  },
+  {
+    "Key": "TarotOrientationUpright",
+    "Value": "Upright",
+    "Lan": "en"
+  },
+  {
+    "Key": "TarotOrientationUpright",
+    "Value": "正位",
+    "Lan": "zh-TW"
+  },
+  {
+    "Key": "TarotOrientationUpright",
+    "Value": "正位",
+    "Lan": "zh-CN"
+  },
+  {
+    "Key": "TarotOrientationReversed",
+    "Value": "Reversed",
+    "Lan": "en"
+  },
+  {
+    "Key": "TarotOrientationReversed",
+    "Value": "逆位",
+    "Lan": "zh-TW"
+  },
+  {
+    "Key": "TarotOrientationReversed",
+    "Value": "逆位",
+    "Lan": "zh-CN"
+  },
+  {
+    "Key": "TarotDomainCareer",
+    "Value": "Career",
+    "Lan": "en"
+  },
+  {
+    "Key": "TarotDomainCareer",
+    "Value": "事業",
+    "Lan": "zh-TW"
+  },
+  {
+    "Key": "TarotDomainCareer",
+    "Value": "事业",
+    "Lan": "zh-CN"
+  },
+  {
+    "Key": "TarotDomainLove",
+    "Value": "Love",
+    "Lan": "en"
+  },
+  {
+    "Key": "TarotDomainLove",
+    "Value": "感情",
+    "Lan": "zh-TW"
+  },
+  {
+    "Key": "TarotDomainLove",
+    "Value": "感情",
+    "Lan": "zh-CN"
+  },
+  {
+    "Key": "TarotDomainHealth",
+    "Value": "Health",
+    "Lan": "en"
+  },
+  {
+    "Key": "TarotDomainHealth",
+    "Value": "健康",
+    "Lan": "zh-TW"
+  },
+  {
+    "Key": "TarotDomainHealth",
+    "Value": "健康",
+    "Lan": "zh-CN"
+  },
+  {
+    "Key": "TarotDomainMind",
+    "Value": "Mind",
+    "Lan": "en"
+  },
+  {
+    "Key": "TarotDomainMind",
+    "Value": "精神",
+    "Lan": "zh-TW"
+  },
+  {
+    "Key": "TarotDomainMind",
+    "Value": "精神",
+    "Lan": "zh-CN"
   }
 ]
