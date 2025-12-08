@@ -13,6 +13,7 @@ namespace FishingLogMVC.Controllers
         private readonly string _controlled;
         private readonly string _secretKey = "ThomasMagicChen_1992";
         private readonly WebSocketConnectionManager _wsManager;
+        private static readonly FishingLog.BLL.user _userService = new();
         public UsersController(WebSocketConnectionManager wsManager)
         {
             _controlled = Guid.NewGuid().ToString();
@@ -27,6 +28,32 @@ namespace FishingLogMVC.Controllers
         public IActionResult Regist()
         {
             return View();
+        }
+
+        [Authorize]
+        public IActionResult Profile()
+        {
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            if (string.IsNullOrEmpty(userId))
+            {
+                return Redirect("/users/login");
+            }
+
+            var userModel = _userService.GetModel(userId);
+            if (userModel == null)
+            {
+                return Redirect("/users/login");
+            }
+
+            var profile = new FishingLogMVC.Models.ProfileViewModel
+            {
+                Username = userModel.username ?? string.Empty,
+                Nickname = userModel.nickname ?? string.Empty,
+                Location = userModel.location ?? string.Empty,
+                Birthday = userModel.birthday.ToString("yyyy-MM-dd")
+            };
+
+            return View(profile);
         }
 
         [AllowAnonymous] 
@@ -88,6 +115,35 @@ namespace FishingLogMVC.Controllers
                 new ClaimsPrincipal(claimsIdentity));
 
             return Json(userId);
+        }
+
+        [Authorize]
+        [HttpPost("/api/Users/Profile")]
+        public IActionResult UpdateProfile([FromForm] FishingLogMVC.Models.ProfileViewModel profile)
+        {
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            if (string.IsNullOrEmpty(userId))
+            {
+                return Unauthorized();
+            }
+
+            var userModel = _userService.GetModel(userId);
+            if (userModel == null)
+            {
+                return NotFound();
+            }
+
+            userModel.nickname = profile.Nickname;
+            userModel.location = profile.Location;
+
+            if (DateTime.TryParse(profile.Birthday, out var birthDay))
+            {
+                userModel.birthday = birthDay;
+            }
+
+            var result = _userService.Update(userModel);
+
+            return Json(new { success = result });
         }
 
         [AllowAnonymous]

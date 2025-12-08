@@ -1,22 +1,26 @@
-﻿<div class="tarot-outter-box">
-	@for (int i = 0; i < 4; i++)
-	{
-		string pp = "/img/" + ViewBag.CardIndexs[i] + ".jpg";
-		<div class="tarot-inner-box">
-			@if (!ViewBag.CardsUtd[i])
-			{
-				<img src="@pp" height="300" class="tarot-img" />
-			}
-			else
-			{
-				<img src="@pp" height="300" class="tarot-img-rotate" />
-			}
-			<div class="tarot-textbox">
-				<span class="tarot-text">@(ViewBag.Cards[i] + (ViewBag.CardsUtd[i] ? "逆位" : "正位"))</span>
-			</div> 
-			<div class="tarot-dis">
-				@ViewBag.TarotText[i]
-			</div>
-		</div>
-	}
+@model IEnumerable<FishingLogMVC.Models.TarotCardResult>
+
+<h2 class="tarot-title">@ViewBag.Dic["TarotResultTitle"]</h2>
+<div class="tarot-outter-box">
+        @foreach (var card in Model)
+        {
+                var orientationText = card.IsReversed ? ViewBag.Dic["TarotOrientationReversed"] : ViewBag.Dic["TarotOrientationUpright"];
+                <div class="tarot-inner-box">
+                        @if (!card.IsReversed)
+                        {
+                                <img src="@card.ImagePath" height="300" class="tarot-img" />
+                        }
+                        else
+                        {
+                                <img src="@card.ImagePath" height="300" class="tarot-img-rotate" />
+                        }
+                        <div class="tarot-textbox">
+                                <span class="tarot-text">@card.LocalizedName (@orientationText)</span>
+                                <span class="tarot-domain">@ViewBag.Dic[card.DomainKey]</span>
+                        </div>
+                        <div class="tarot-dis">
+                                @card.Description
+                        </div>
+                </div>
+        }
 </div>

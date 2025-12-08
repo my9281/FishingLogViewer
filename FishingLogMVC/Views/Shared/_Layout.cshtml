@@ -39,20 +39,26 @@
 					<a id="lan-TW" href="javascript:void(0);">繁</a>
 				</p>
 			</div>
-			@if (User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value != null)
-			{
-				var p = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
-				if (p == "1")
-				{
-					<a class="logout-btn" href="/CMS/Admin">查看后台</a>
-				}
-				<a class="logout-btn" href="/Tarot/Index">@ViewBag.Dic["Fortune"]</a>
-				<a class="logout-btn" href="/Resume">@ViewBag.Dic["Resume"]</a>
-				<a class="logout-btn" href="/Users/Logout">@ViewBag.Dic["logout"]</a>
+                        @if (User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value != null)
+                        {
+                                var p = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+                                if (p == "1")
+                                {
+                                        <a class="logout-btn" href="/CMS/Admin">查看后台</a>
+                                }
+                                <a class="logout-btn" href="/Users/Profile">@ViewBag.Dic["Profile"]</a>
+                                <a class="logout-btn" href="/Tarot/Index">@ViewBag.Dic["Fortune"]</a>
+                                <a class="logout-btn" href="/Resume">@ViewBag.Dic["Resume"]</a>
+                                <a class="logout-btn" href="/Users/Logout">@ViewBag.Dic["logout"]</a>
 
-			}
-		</div>
-	</div>
+                        }
+                        else
+                        {
+                                <a class="logout-btn" href="/Users/Login">@ViewBag.Dic["Login"]</a>
+                                <a class="logout-btn" href="/Users/Regist">@ViewBag.Dic["Regist"]</a>
+                        }
+                </div>
+        </div>
 	<canvas id="canvas" width="1920" height="1080">
 	</canvas>
 	@RenderBody()
